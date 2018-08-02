@@ -36,6 +36,11 @@ public class ThymeleafCotroller {
     }
 
 
+    /**
+     * form表单提交接口,返回test接口
+     * @param modelMap
+     * @return
+     */
     @RequestMapping("/postform")
     public String postform(User modelMap) {
         System.out.println(modelMap.getName());

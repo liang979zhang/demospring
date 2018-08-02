@@ -38,13 +38,19 @@ URL : <br/>
 
 <br/>
 
-
-<form th:action="@{/zdl/th/postform}" th:object="${user}"  th:method="post">
+<!--  form表单 提交到postform接口-->
+<form th:action="@{/zdl/th/postform}" th:object="${user}" th:method="post">
 
     <input type="text" th:field="*{name}"/>
     <input type="submit"/>
-
 </form>
 
+
+<br/>
+<div th:if="${user.age}==18"> 18岁的天空</div>
+<div th:if="${user.age} gt 18"> 你老了</div>
+<div th:if="${user.age} lt 18"> 你很年轻</div>
+<div th:if="${user.age} ge 18"> 大于等于</div>
+<div th:if="${user.age} le 18"> 小于等于</div>
 </body>
 </html>

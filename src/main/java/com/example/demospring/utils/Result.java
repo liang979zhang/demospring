@@ -17,7 +17,11 @@ public class Result<T> {
     /*具体内容*/
     private T data;
 
-        //成功的接受类
+
+    public Result() {
+    }
+
+    //成功的接受类
     public Result(T data) {
         this.code = 200;
         this.msg = "ok";
@@ -31,6 +35,14 @@ public class Result<T> {
     }
 
 
+    public Result( String msg) {
+        this.code = 555;
+        this.msg = msg;
+    }
+
+    public static Result errorExcetion(String msg) {
+        return new Result(msg);
+    }
     /**
      * 请求成功返回
      *
